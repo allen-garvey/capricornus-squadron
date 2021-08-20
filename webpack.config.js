@@ -16,10 +16,18 @@ module.exports = {
         },
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public_html'),
-        publicPath: 'http://localhost:3000/assets/',
+        static: {
+            directory: path.join(__dirname, 'public_html'),
+            watch: true,
+        },
+        devMiddleware: {
+            publicPath: '/assets/'
+        },
         port: 3000,
         open: true,
+        client: {
+            overlay: {},
+        },
     },
     module: {
         rules: [
@@ -30,7 +38,10 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader,
                     },
                     {
-                        loader: 'css-loader?url=false',
+                        loader: 'css-loader',
+                        options: {
+                            url: false,
+                        },
                     },
                     {
                         loader: 'sass-loader',
