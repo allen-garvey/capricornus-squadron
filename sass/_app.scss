@@ -1,6 +1,4 @@
-/*
-* Base styles
-*/
+@use './variables';
 
 body{
 	margin: 0;
@@ -21,7 +19,7 @@ p{
 }
 
 .container{
-	width: $container_width;
+	width: variables.$container_width;
 	margin: 0 auto;
 }
 img.spritesheet{

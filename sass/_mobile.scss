@@ -1,3 +1,5 @@
+@use './variables';
+
 .mobile-warning-container {
 	position: relative;
 	top: -30px;
@@ -8,9 +10,9 @@
 }
 
 
-@media screen and (max-width: $container_width){
+@media screen and (max-width: variables.$container_width){
 	.header{
-		width: $container_width;
+		width: variables.$container_width;
 	}
 	.nav-list{
 		// justify-content: flex-start;
